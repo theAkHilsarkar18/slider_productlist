@@ -9,6 +9,16 @@ class SliderList extends StatefulWidget {
 
 class _SliderListState extends State<SliderList> {
   double selectedValue = 0;
+  List productNameList = [
+    "earphone",
+    "bluetooth",
+    "charger",
+    "pan drive",
+    "cover"
+  ];
+  List productPriceList = [100, 250, 300, 800, 360];
+  List productList = [1,2,3,4,5];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -47,7 +57,10 @@ class _SliderListState extends State<SliderList> {
                     ),
                   ),
                 ),
-                ProductList(),
+                ProductList("T-shirt", 1000),
+                Column(
+
+                ),
               ],
             ),
           ],
@@ -55,12 +68,15 @@ class _SliderListState extends State<SliderList> {
       ),
     );
   }
+//
+  //
+  //
 
-  Widget ProductList() {
+  Widget ProductList(String? productName, double? productPrice) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        height: 100,
+        height: 50,
         width: double.infinity,
         decoration: BoxDecoration(
           color: Colors.grey.shade200,
@@ -68,7 +84,14 @@ class _SliderListState extends State<SliderList> {
         ),
         child: Row(
           children: [
-            Text(""),
+            SizedBox(
+              width: 20,
+            ),
+            Text("$productName"),
+            SizedBox(
+              width: 20,
+            ),
+            Text("$productPrice"),
           ],
         ),
       ),
